@@ -7,9 +7,16 @@
       <!-- <app-warning-alert></app-warning-alert>
       <app-success-alert></app-success-alert> -->
 
-      <input type="text" class='form-control' [(ngModel)]="username">
+      <!-- <input type="text" class='form-control' [(ngModel)]="username">
       <p>{{ username }}</p>
-      <button class="btn btn-simple" (click)="cleanupUsername()" [disabled]="username === ''">Clean username</button>
+      <button class="btn btn-simple" (click)="cleanupUsername()" [disabled]="username === ''">Clean username</button> -->
+
+      <button class="btn btn-simple" (click)="addItems()" >Display details</button>
+      <p *ngIf="items.length > 0">any content when added item</p>
+
+        <div *ngFor="let item of items"
+        [ngStyle]="{backgroundColor: getColor(item)}"
+        [ngClass]="{'white-text': item >= 5}">{{ item }}</div>
     </div>
   </div>
 </div>
