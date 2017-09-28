@@ -9,7 +9,7 @@
 
       <input type="text" class='form-control' [(ngModel)]="username">
       <p>{{ username }}</p>
-      <button class="btn btn-simple" (click)="cleanupUsername()">Clean username</button>
+      <button class="btn btn-simple" (click)="cleanupUsername()" [disabled]="username === ''">Clean username</button>
     </div>
   </div>
 </div>
