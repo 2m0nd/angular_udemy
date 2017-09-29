@@ -11,12 +11,30 @@
       <p>{{ username }}</p>
       <button class="btn btn-simple" (click)="cleanupUsername()" [disabled]="username === ''">Clean username</button> -->
 
-      <button class="btn btn-simple" (click)="addItems()" >Display details</button>
+      <!-- <button class="btn btn-simple" (click)="addItems()" >Display details</button>
       <p *ngIf="items.length > 0">any content when added item</p>
 
         <div *ngFor="let item of items"
         [ngStyle]="{backgroundColor: getColor(item)}"
-        [ngClass]="{'white-text': item >= 5}">{{ item }}</div>
+        [ngClass]="{'white-text': item >= 5}">{{ item }}</div> -->
+
+        <div class="row">
+          <app-game-control
+          (newOdd)="onNewOdd($event)"
+          (newEven)="onNewEven($event)"></app-game-control>
+        </div>
+        <div class="row">
+          <div class="col-xs-3">
+              <app-odd
+                *ngFor="let num of oddArray"
+                [num]="num"></app-odd>
+          </div>
+          <div class="col-xs-3">
+            <app-even
+            *ngFor="let num of evenArray"
+            [num]="num"></app-even>
+          </div>
+        </div>
     </div>
   </div>
 </div>
