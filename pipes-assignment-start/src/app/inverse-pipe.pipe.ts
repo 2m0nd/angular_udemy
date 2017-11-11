@@ -6,12 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class InversePipePipe implements PipeTransform {
 
   transform(value: string): string {
-    if (value.toLowerCase() === 'small') {
-      return value.toLowerCase();
-    } else if (value.toLowerCase() === 'large') {
-      return value.toUpperCase();
-    }
-    return value;
+    return value.split('').reverse().join('');
   }
 
 }
